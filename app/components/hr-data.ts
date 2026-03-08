@@ -65,6 +65,7 @@ export const leaveSummary = [
 ];
 
 
+
 export type Employee = {
   name: string;
   department: string;
@@ -113,7 +114,6 @@ export const employees: Employee[] = [
     name: "Olivia Chen",
     department: "Operations",
     role: "Operations Lead",
-
   },
   {
     name: "Ethan Brooks",

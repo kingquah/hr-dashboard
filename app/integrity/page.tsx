@@ -29,8 +29,7 @@ export default function IntegrityPage() {
     [checkedItems],
   );
 
-  const integrityScore = useMemo(
-    () => `${Math.round((checkedCount / totalChecklistItems) * 100)}%`,
+
     [checkedCount],
   );
 
@@ -45,7 +44,7 @@ export default function IntegrityPage() {
     const newEntry: IntegrityJournalEntry = {
       employee: selectedEmployee,
       month: selectedMonth,
-      score: integrityScore,
+
       supervisorRemark: supervisorRemark.trim() || "No remark provided.",
     };
 
@@ -94,6 +93,7 @@ export default function IntegrityPage() {
           </label>
         </div>
 
+
         <div className="mt-6 space-y-4">
           {integritySections.map((section) => (
             <article key={section.category} className="rounded-xl border border-slate-200 p-4">
@@ -117,13 +117,6 @@ export default function IntegrityPage() {
           ))}
         </div>
 
-        <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3">
-          <p className="text-sm text-slate-600">Integrity Score</p>
-          <p className="text-2xl font-semibold text-slate-900">{integrityScore}</p>
-          <p className="text-xs text-slate-500">
-            {checkedCount} of {totalChecklistItems} items checked
-          </p>
-        </div>
 
         <label className="mt-6 block text-sm font-medium text-slate-700">
           Supervisor Remark
@@ -160,7 +153,7 @@ export default function IntegrityPage() {
             </thead>
             <tbody>
               {journalEntries.map((entry, index) => (
-                <tr key={`${entry.employee}-${entry.month}-${index}`} className="border-b border-slate-100">
+
                   <td className="px-4 py-3 font-medium text-slate-900">{entry.employee}</td>
                   <td className="px-4 py-3 text-slate-700">{entry.month}</td>
                   <td className="px-4 py-3 text-slate-700">{entry.score}</td>
