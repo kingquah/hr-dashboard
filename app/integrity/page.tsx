@@ -29,8 +29,7 @@ export default function IntegrityPage() {
     [checkedItems],
   );
 
-  const scorePercentage = useMemo(
-    () => Math.round((checkedCount / totalChecklistItems) * 100),
+
     [checkedCount],
   );
 
@@ -45,7 +44,7 @@ export default function IntegrityPage() {
     const newEntry: IntegrityJournalEntry = {
       employee: selectedEmployee,
       month: selectedMonth,
-      score: `${scorePercentage}%`,
+
       supervisorRemark: supervisorRemark.trim() || "No remark provided.",
     };
 
@@ -94,23 +93,6 @@ export default function IntegrityPage() {
           </label>
         </div>
 
-        <div className="mt-6 rounded-xl border border-slate-200 bg-slate-50 p-4">
-          <p className="text-sm font-medium text-slate-700">Live Integrity Score</p>
-          <div className="mt-3 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-lg border border-slate-200 bg-white p-3">
-              <p className="text-xs text-slate-500">Checked</p>
-              <p className="text-xl font-semibold text-slate-900">{checkedCount}</p>
-            </div>
-            <div className="rounded-lg border border-slate-200 bg-white p-3">
-              <p className="text-xs text-slate-500">Total Items</p>
-              <p className="text-xl font-semibold text-slate-900">{totalChecklistItems}</p>
-            </div>
-            <div className="rounded-lg border border-slate-200 bg-white p-3">
-              <p className="text-xs text-slate-500">Percentage</p>
-              <p className="text-xl font-semibold text-slate-900">{scorePercentage}%</p>
-            </div>
-          </div>
-        </div>
 
         <div className="mt-6 space-y-4">
           {integritySections.map((section) => (
@@ -134,6 +116,7 @@ export default function IntegrityPage() {
             </article>
           ))}
         </div>
+
 
         <label className="mt-6 block text-sm font-medium text-slate-700">
           Supervisor Remark
@@ -170,10 +153,7 @@ export default function IntegrityPage() {
             </thead>
             <tbody>
               {journalEntries.map((entry, index) => (
-                <tr
-                  key={`${entry.employee}-${entry.month}-${index}`}
-                  className="border-b border-slate-100"
-                >
+
                   <td className="px-4 py-3 font-medium text-slate-900">{entry.employee}</td>
                   <td className="px-4 py-3 text-slate-700">{entry.month}</td>
                   <td className="px-4 py-3 text-slate-700">{entry.score}</td>
