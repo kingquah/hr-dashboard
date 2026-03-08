@@ -1,5 +1,6 @@
 "use client";
 
+
 import { useMemo, useState } from "react";
 import { DashboardShell } from "../components/dashboard-shell";
 import { employees } from "../components/hr-data";
@@ -26,7 +27,7 @@ export default function EmployeesPage() {
         employee.name,
         employee.department,
         employee.role,
-        employee.kpiScore,
+
         employee.leaveBalance,
         employee.status,
       ]
@@ -40,7 +41,7 @@ export default function EmployeesPage() {
     <DashboardShell>
       <TopHeader
         title="Employees"
-        subtitle="View and track employee status, KPI scores, and leave balances"
+
       />
 
       <section className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
@@ -62,7 +63,7 @@ export default function EmployeesPage() {
                 <th className="px-4 py-3 font-medium">Name</th>
                 <th className="px-4 py-3 font-medium">Department</th>
                 <th className="px-4 py-3 font-medium">Role</th>
-                <th className="px-4 py-3 font-medium">KPI Score</th>
+
                 <th className="px-4 py-3 font-medium">Leave Balance</th>
                 <th className="px-4 py-3 font-medium">Status</th>
               </tr>
@@ -70,10 +71,7 @@ export default function EmployeesPage() {
             <tbody>
               {filteredEmployees.map((employee) => (
                 <tr key={employee.name} className="border-b border-slate-100 text-slate-700">
-                  <td className="px-4 py-3 font-medium text-slate-900">{employee.name}</td>
-                  <td className="px-4 py-3">{employee.department}</td>
-                  <td className="px-4 py-3">{employee.role}</td>
-                  <td className="px-4 py-3">{employee.kpiScore}</td>
+
                   <td className="px-4 py-3">{employee.leaveBalance}</td>
                   <td className="px-4 py-3">
                     <span

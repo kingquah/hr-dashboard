@@ -64,13 +64,12 @@ export const leaveSummary = [
   { label: "Cancelled", count: 3, color: "bg-slate-400" },
 ];
 
+
 export type Employee = {
   name: string;
   department: string;
   role: string;
-  kpiScore: string;
-  leaveBalance: string;
-  status: "Active" | "On Leave" | "Probation";
+
 };
 
 export const employees: Employee[] = [
@@ -78,64 +77,45 @@ export const employees: Employee[] = [
     name: "Ava Patel",
     department: "Engineering",
     role: "Frontend Engineer",
-    kpiScore: "91%",
-    leaveBalance: "12 days",
-    status: "Active",
+
   },
   {
     name: "Mason Rivera",
     department: "Design",
     role: "Product Designer",
-    kpiScore: "87%",
-    leaveBalance: "9 days",
-    status: "Active",
+
   },
   {
     name: "Sophia Kim",
     department: "Sales",
     role: "Account Executive",
-    kpiScore: "93%",
-    leaveBalance: "7 days",
-    status: "Active",
+
   },
   {
     name: "Noah Bennett",
     department: "HR",
     role: "HR Specialist",
-    kpiScore: "84%",
-    leaveBalance: "10 days",
-    status: "On Leave",
+
   },
   {
     name: "Emma Thompson",
     department: "Marketing",
     role: "Campaign Manager",
-    kpiScore: "89%",
-    leaveBalance: "11 days",
-    status: "Active",
+
   },
   {
     name: "Liam Foster",
     department: "Finance",
     role: "Financial Analyst",
-    kpiScore: "86%",
-    leaveBalance: "8 days",
-    status: "Probation",
+
   },
   {
     name: "Olivia Chen",
     department: "Operations",
     role: "Operations Lead",
-    kpiScore: "90%",
-    leaveBalance: "13 days",
-    status: "Active",
+
   },
   {
     name: "Ethan Brooks",
     department: "Support",
     role: "Customer Support Rep",
-    kpiScore: "82%",
-    leaveBalance: "6 days",
-    status: "On Leave",
-  },
-];
