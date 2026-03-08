@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check:conflicts": "bash -lc \"! rg -n '^(<<<<<<<|=======|>>>>>>>)' app\""
   },
   "dependencies": {
     "next": "16.1.6",
