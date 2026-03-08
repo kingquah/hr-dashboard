@@ -4,6 +4,7 @@ export const navItems = [
   { label: "Leave", href: "#" },
   { label: "KPI", href: "#" },
   { label: "Performance", href: "#" },
+
 ];
 
 export const summaryCards = [
