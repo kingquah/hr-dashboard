@@ -4,7 +4,7 @@ export const navItems = [
   { label: "Leave", href: "#" },
   { label: "KPI", href: "#" },
   { label: "Performance", href: "#" },
-  { label: "Integrity", href: "/integrity" },
+
 ];
 
 export const summaryCards = [
@@ -137,82 +137,5 @@ export const employees: Employee[] = [
     kpiScore: "82%",
     leaveBalance: "6 days",
     status: "On Leave",
-  },
-];
-
-export const integrityMonths = [
-  "January 2026",
-  "February 2026",
-  "March 2026",
-  "April 2026",
-  "May 2026",
-  "June 2026",
-];
-
-export const integritySections = [
-  {
-    category: "Responsiveness",
-    items: [
-      "Replied to all official matters (emails/texts/calls)",
-      "No silence that blocked work or decisions",
-      "Returned or acknowledged updates/calls promptly",
-    ],
-  },
-  {
-    category: "Punctuality & Preparedness",
-    items: [
-      "Arrived on time or early for official meetings and engagements",
-      "Informed before time if unavoidable delay",
-      "Read and prepared all pre-reads/agendas prior",
-      "Brought required updates / data / facts",
-      "Able to participate and contribute in discussions",
-    ],
-  },
-  {
-    category: "Work Delivery",
-    items: [
-      "All tasks delivered on or before deadline",
-      "Delays communicated in advance",
-      "Quality of work is above acceptable range",
-    ],
-  },
-  {
-    category: "Weekly Improvements",
-    items: [
-      "No repeated mistakes after feedback",
-      "No reminders needed for basic duties",
-      "Did not slow others down due to personal defect/delay",
-    ],
-  },
-  {
-    category: "Professional Maturity",
-    items: [
-      "No waiting to be told what to do",
-      "No poor documentation",
-      "Have good prioritisation sense",
-      "Not defensive when corrected",
-    ],
-  },
-] as const;
-
-export type IntegrityJournalEntry = {
-  employee: string;
-  month: string;
-  score: string;
-  supervisorRemark: string;
-};
-
-export const integrityJournal: IntegrityJournalEntry[] = [
-  {
-    employee: "Ava Patel",
-    month: "March 2026",
-    score: "88%",
-    supervisorRemark: "Strong ownership and timely communication.",
-  },
-  {
-    employee: "Noah Bennett",
-    month: "March 2026",
-    score: "81%",
-    supervisorRemark: "Good improvement after feedback on documentation.",
   },
 ];
