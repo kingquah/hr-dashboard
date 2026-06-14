@@ -1,76 +1,19 @@
 export const navItems = [
   { label: "Dashboard", href: "/" },
   { label: "Employees", href: "/employees" },
-  { label: "Leave", href: "#" },
-  { label: "KPI", href: "#" },
-  { label: "Performance", href: "#" },
-
 ];
-
-export const summaryCards = [
-  {
-    title: "Total Employees",
-    value: "248",
-    change: "+6 this month",
-    accent: "bg-blue-500",
-  },
-  {
-    title: "Pending Leave Requests",
-    value: "14",
-    change: "3 urgent approvals",
-    accent: "bg-amber-500",
-  },
-  {
-    title: "KPI Completion Rate",
-    value: "82%",
-    change: "+4% vs last quarter",
-    accent: "bg-emerald-500",
-  },
-  {
-    title: "Performance Reviews Due",
-    value: "21",
-    change: "8 due this week",
-    accent: "bg-violet-500",
-  },
-];
-
-export const recentActivity = [
-  {
-    title: "Leave request submitted",
-    detail: "Ava Patel requested annual leave for Apr 12 - Apr 15.",
-    time: "10 min ago",
-  },
-  {
-    title: "New employee onboarded",
-    detail: "Mason Rivera joined the Design team.",
-    time: "45 min ago",
-  },
-  {
-    title: "Performance review completed",
-    detail: "Q1 review finalized for Sophia Kim.",
-    time: "1 hr ago",
-  },
-  {
-    title: "KPI update posted",
-    detail: "Sales department reached 88% KPI completion.",
-    time: "3 hrs ago",
-  },
-];
-
-export const leaveSummary = [
-  { label: "Approved", count: 32, color: "bg-emerald-500" },
-  { label: "Pending", count: 14, color: "bg-amber-500" },
-  { label: "Rejected", count: 5, color: "bg-rose-500" },
-  { label: "Cancelled", count: 3, color: "bg-slate-400" },
-];
-
-
 
 export type Employee = {
   name: string;
   department: string;
   role: string;
-
+  status: "Active" | "On Leave" | "Probation";
+  latestIntegrityScore: string;
+  latestKpiScore: string;
+  leaveBalance: string;
+  integrityHistory: { month: string; integrityScore: string; supervisorRemark: string }[];
+  kpiHistory: { month: string; kpiScore: string; notes: string }[];
+  leaveHistory: { startDate: string; endDate: string; leaveType: string; days: number; remainingBalance: string }[];
 };
 
 export const employees: Employee[] = [
@@ -78,44 +21,24 @@ export const employees: Employee[] = [
     name: "Ava Patel",
     department: "Engineering",
     role: "Frontend Engineer",
-
-  },
-  {
-    name: "Mason Rivera",
-    department: "Design",
-    role: "Product Designer",
-
-  },
-  {
-    name: "Sophia Kim",
-    department: "Sales",
-    role: "Account Executive",
-
+    status: "Active",
+    latestIntegrityScore: "88%",
+    latestKpiScore: "91%",
+    leaveBalance: "12 days",
+    integrityHistory: [{ month: "March", integrityScore: "88%", supervisorRemark: "Dependable ownership." }],
+    kpiHistory: [{ month: "March", kpiScore: "91%", notes: "Delivered sprint goals." }],
+    leaveHistory: [{ startDate: "2026-04-12", endDate: "2026-04-15", leaveType: "Annual", days: 4, remainingBalance: "12 days" }],
   },
   {
     name: "Noah Bennett",
     department: "HR",
     role: "HR Specialist",
-
+    status: "On Leave",
+    latestIntegrityScore: "81%",
+    latestKpiScore: "84%",
+    leaveBalance: "10 days",
+    integrityHistory: [{ month: "March", integrityScore: "81%", supervisorRemark: "Consistent support." }],
+    kpiHistory: [{ month: "March", kpiScore: "84%", notes: "Improved response time." }],
+    leaveHistory: [{ startDate: "2026-05-01", endDate: "2026-05-03", leaveType: "Sick", days: 3, remainingBalance: "10 days" }],
   },
-  {
-    name: "Emma Thompson",
-    department: "Marketing",
-    role: "Campaign Manager",
-
-  },
-  {
-    name: "Liam Foster",
-    department: "Finance",
-    role: "Financial Analyst",
-
-  },
-  {
-    name: "Olivia Chen",
-    department: "Operations",
-    role: "Operations Lead",
-  },
-  {
-    name: "Ethan Brooks",
-    department: "Support",
-    role: "Customer Support Rep",
+];

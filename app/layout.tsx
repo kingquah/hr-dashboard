@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "HR Dashboard",
-  description: "Internal HR management dashboard with key workforce insights",
+  title: "Strength Workout Tracker",
+  description: "A premium mobile-friendly workout dashboard for strength progression.",
 };
 
 export default function RootLayout({
@@ -13,7 +13,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-slate-100 antialiased">{children}</body>
+      <body>{children}</body>
     </html>
   );
 }
